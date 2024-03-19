@@ -48,3 +48,58 @@ s = '|**|*|*'
 startIndices = [1, 1]
 endIndices = [5, 6]
 print(numberOfItems(s, startIndices, endIndices))  # Output: [2, 3]
+
+
+
+# def numberOfItems(s, startIndices, endIndices):
+#     # Convert all indices from 1-based to 0-based for Python indexing
+#     startIndices = [i - 1 for i in startIndices]
+#     endIndices = [i - 1 for i in endIndices]
+
+#     # Precompute the number of items between each pair of compartments
+#     items_between = []
+#     count = 0
+#     for char in s:
+#         if char == '|':
+#             items_between.append(count)
+#             count = 0
+#         elif char == '*':
+#             count += 1
+#     items_between.append(count)  # Add the last count
+
+#     # Calculate prefix sums of items_between to quickly compute ranges
+#     prefix_sums = [0]
+#     for count in items_between:
+#         prefix_sums.append(prefix_sums[-1] + count)
+
+#     # Helper function to find the index of the next compartment
+#     def find_next_compartment(index, direction=1):
+#         while 0 <= index < len(s) and s[index] != '|':
+#             index += direction
+#         return index
+
+#     # Calculate the number of items for each query
+#     results = []
+#     for start, end in zip(startIndices, endIndices):
+#         # Find the compartments that enclose the current range
+#         start_compartment = find_next_compartment(start, 1)
+#         end_compartment = find_next_compartment(end, -1)
+
+#         # If there is no enclosing compartment, the result is 0
+#         if start_compartment >= end_compartment or start_compartment >= len(s) or end_compartment < 0:
+#             results.append(0)
+#         else:
+#             # Calculate the number of items within the enclosed compartments
+#             # Ensure the indices for prefix_sums are within the valid range
+#             start_compartment = max(0, min(start_compartment, len(prefix_sums) - 1))
+#             end_compartment = max(0, min(end_compartment, len(prefix_sums) - 1))
+#             result = prefix_sums[end_compartment] - prefix_sums[start_compartment]
+#             results.append(result)
+
+#     return results
+
+# # Example usage
+# s = '|**|*|*'
+# startIndices = [1, 1]
+# endIndices = [5, 6]
+# print(numberOfItems(s, startIndices, endIndices))  # Output should be [2, 3]

@@ -36,3 +36,9 @@ class Solution:
             answer.append(plates_between)
 
         return answer
+
+#The time complexity of the optimized solution for the LeetCode problem 2055 “Plates Between Candles” is O(n + q), where n is the length of the string s and q is the number of queries.
+#Here’s the breakdown of the complexity:
+#O(n): We iterate through the string s three times independently (once for the prefix sum array, once for the left nearest candles, and once for the right nearest candles). Each of these operations is linear with respect to the length of s.
+#O(q): We then iterate through the array of queries once. For each query, we perform a constant-time operation to find the number of plates between candles using the precomputed arrays. The time for processing all queries is therefore linear with respect to the number of queries.
+#Since these operations are independent, we add the complexities, resulting in a total time complexity of O(n + q). This means the execution time grows linearly with the size of the input string and the number of queries, which is efficient for large datasets.

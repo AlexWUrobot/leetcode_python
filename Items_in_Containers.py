@@ -1,4 +1,5 @@
 # https://leetcode.com/discuss/interview-question/1955152/amazon-online-assessment-demo
+# similar to https://leetcode.com/problems/plates-between-candles/description/
 
 
 

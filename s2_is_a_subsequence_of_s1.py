@@ -41,3 +41,12 @@ old_passes = ["abdbc", "ach", "abb"]
 new_passes = ["baacbab", "accdb", "baacba"]
 # The output should be ['YES', 'NO', 'YES'], indicating the similarity results for each pair
 print(check_passwords(old_passes, new_passes))
+
+
+#The time complexity of the check_passwords function, which includes the is_similar_password function, is O(n * m), where n is the number of password pairs, and m is the length of the longest new password in the list.
+
+#Here’s the breakdown:
+
+#The is_similar_password function has a while loop that runs at most m times, where m is the length of the new password.
+#The check_passwords function calls is_similar_password for each of the n password pairs.
+#Therefore, in the worst case, where each new password is checked against an old password of similar length, the function will perform n iterations of the is_similar_password function, each taking m steps, resulting in an overall time complexity of O(n * m).

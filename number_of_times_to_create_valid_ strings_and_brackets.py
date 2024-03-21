@@ -1,3 +1,5 @@
+# https://leetcode.com/discuss/interview-question/2299560/Amazon-SDE-or-Online-Assessment-(OA)-or-July-2022
+
 def fun(ind, st, s):
     # base case
     if ind >= len(s):

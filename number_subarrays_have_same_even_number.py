@@ -1,3 +1,6 @@
+
+#https://leetcode.com/discuss/interview-question/3838926/Amazon-SDE-1-or-Online-Assessment
+
 def solution(a):
     n = len(a)  # Get the length of the input array
     r = [0] * n  # Initialize an array 'r' to store the count of groups with mean rank

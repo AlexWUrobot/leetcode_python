@@ -1,3 +1,5 @@
+
+# https://leetcode.com/discuss/interview-question/3250788/OA-coding-problem
 def count_white_positions(n, m, lights):
     # Initialize lights array
     lights_array = [0] * n

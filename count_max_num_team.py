@@ -1,5 +1,5 @@
 # https://fastprep.gitbook.io/amazon-2024-oa/count-max-num-teams-or-ft
-# https://fastprep.gitbook.io/amazon-2024-oa/count-max-num-teams-or-ft
+# https://www.fastprep.io/problems/count-max-num-teams
 def countMaxNumTeams(skill, teamSize, maxDiff):
     skill.sort()  # Sort the skill levels
     teams = []  # List to store the formed teams

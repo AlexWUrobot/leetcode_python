@@ -1,3 +1,5 @@
+# https://www.fastprep.io/problems/amazon-count-faults
+
 def countFaults(n, logs):
     # Initialize a dictionary to keep track of server errors
     error_counts = {f's{i}': 0 for i in range(1, n+1)}

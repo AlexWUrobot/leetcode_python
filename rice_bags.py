@@ -1,5 +1,8 @@
 # https://www.fastprep.io/problems/max-set-size
 # https://medium.com/@yunhua.zhang94/amazon-oa-rice-bags-d4bcb9965433
+# https://leetcode.com/discuss/interview-question/4628170/Amazon-OA
+
+
 from typing import List
 
 def func(arr: List[int]) -> int:
@@ -24,3 +27,22 @@ print(riceBags, "output:", func(riceBags))
 
 riceBags = [3, 9, 4, 2, 16, 256]
 print(riceBags, "output:", func(riceBags))
+
+
+# another solution :
+
+
+# def max_size_perfect_set(nums):
+#     nums_set = set(nums)
+#     max_size = 0
+
+#     for num in nums:
+#         current_size = 1
+#         current_num = num
+#         while current_num * current_num in nums_set:
+#             current_num *= current_num
+#             current_size += 1
+#         if current_size >= 2:
+#             max_size = max(current_size, max_size)
+
+#     return max_size

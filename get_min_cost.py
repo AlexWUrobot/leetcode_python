@@ -1,3 +1,4 @@
+# https://www.fastprep.io/problems/get-minimum-cost
 # https://fastprep.gitbook.io/amazon-2024-oa/2023-june-aug/get-minimum-cost
 # learn heapq : https://docs.python.org/3/library/heapq.html
 

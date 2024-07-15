@@ -39,3 +39,5 @@ maxPower = [11, 100]
 
 # Call the function and print the output
 print(processExecution(power, minPower, maxPower))
+
+# time complexity O(n * m)

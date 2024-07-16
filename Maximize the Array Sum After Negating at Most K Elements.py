@@ -1,5 +1,5 @@
 # https://www.fastprep.io/problems/amazon-maximize-the-array-sum-after-negating-at-most-k-elements
-
+# https://www.fastprep.io/problems/maximize-negative-signs
 #1.Compute the prefix sums of the array.
 #2. Sort the prefix sums along with their original indices.
 #3. Negate the smallest prefix sums as long as they don't make any prefix sum non-positive.
@@ -43,6 +43,38 @@ A2 = [10, 9, 2, 3]
 print(max_negate_prefix_positive(A1))  # Output: [4, -1, -1, -1]
 print(max_negate_prefix_positive(A2))  # Output: [10, 9, -2, -3]
 # Time complexity of O(n^2)
+
+
+
+
+
+
+
+
+
+################## Same question 
+
+class Solution:
+  def maximizeNegativeSigns(self, sequence: List[int]) -> int:
+    sequence.sort()
+    half = sum(sequence)/2.0
+    
+    cummulate = 0
+    neg_count = 0
+    for num in sequence:
+      if cummulate + num<half:
+        cummulate+=num
+        neg_count+=1
+      else: break
+    return neg_count
+#########################################
+
+
+
+
+
+
+
 
 
 

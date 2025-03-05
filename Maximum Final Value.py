@@ -1,6 +1,6 @@
 # https://www.fastprep.io/problems/amazon-maximum-final
 
-
+# s O(n log n) + O(n) = O(n log n).
 
 def maximum_final(arr):
     arr.sort()

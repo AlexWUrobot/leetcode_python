@@ -1,9 +1,68 @@
+
 /******************************************************************************
 
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
+Consider a system that manages the navigation of delivery robots within a city. 
+The city is represented as a graph where nodes represent locations, and edges represent valid paths between locations. 
+Each delivery robot is assigned a specific route to deliver packages to various destinations within the city.
+std::vector<std::vector<int>> cityMap = { {0, 1, 1, 0, 0}, {1, 0, 1, 1, 0}, {1, 1, 0, 1, 1}, {0, 1, 1, 0, 1}, {0, 0, 1, 1, 0}, }; 
 
+Explanation: if cityMap[source][destination] == 1 then the robot can navigate from source to destination.
+Example: cityMap[0][2] = 1 -> Robot can navigate from 0 to 2 
+
+The existing codebase has a DeliveryRobot class responsible for handling the movement of robots.
+However, the class lacks proper organization and could benefit from better design. 
+
+
+Existing Code:
+
+#include <iostream> 
+#include <vector> 
+class DeliveryRobot {
+  public: 
+    DeliveryRobot(const std::vector<std::vector<int>>& cityMap, int startLocation) : cityMap_(cityMap), currentLocation_(startLocation) {} 
+    void move(int destination) {
+      if (isValidMove(destination)) { 
+        std::cout << "Moving from " << currentLocation_ << " to " << destination << ".\n"; currentLocation_ = destination;
+      } else { 
+        std::cout << "Invalid move from " << currentLocation_ << " to " << destination << ".\n"; } } 
+  
+    std::vector<int> FindShortestPath(int target){ 
+    //Implementation of a shortest Path Algorithm from currentLocation_ to target
+    } 
+
+  private: 
+    std::vector<std::vector<int>> cityMap_; 
+    int currentLocation_; 
+    bool isValidMove(int destination) const { 
+    return destination >= 0 && destination < cityMap_.size() && cityMap_[currentLocation_][destination] == 1; } 
+}; 
+    
+  int main() { 
+  
+  std::vector<std::vector<int>> cityMap = { {0, 1, 1, 0, 0}, {1, 0, 1, 1, 0}, {1, 1, 0, 1, 1}, {0, 1, 1, 0, 1}, {0, 0, 1, 1, 0}, };
+  
+  DeliveryRobot robot(cityMap, 0); 
+  // Sample movements robot.move(2); robot.move(4); robot.move(1); return 0; } 
+  /* Tasks: 
+  1. Implement the FindShortestPath() function which will return the optimal path for moving the robot from the currentLocation_ to the target. 
+  2. Enhance the system to be able to manage the cityMap_. This new functionality should allow adding new locations and paths dynamically. 
+
+  Bonus: How would you write unit tests for this class? Give a few examples. 
+  
+  3. Refactoring: Refactor the DeliveryRobot class to have a better design. 
+  Consider creating appropriate classes that will result to a better codebase. 
+  
+  Hints: 
+  -- CityMap Class: Create a CityMap class responsible for maintaining the cityMap_
+  -- RoutingService Class: Create a RoutingService class responsible for finding the optimal route for a delivery robot to reach its destination. 
+  
+  4. Dependency Injection: Refactor the DeliveryRobot class to accept the CityMap and RoutingService dependencies through dependency injection. 
+  Bonus: How would you write unit tests for the new set of classes? 
+   
+   Feel free to implement the refactored code for the DeliveryRobot class, CityMap class, 
+  and RoutingService class. 
+  
+  Explain your design decisions and implementation details
 *******************************************************************************/
 
 #include <iostream>

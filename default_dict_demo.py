@@ -15,3 +15,9 @@ dict["key_input"].append(7)   # the only difference, we can append immediately
 dict["key_input"].append(8)
 print (dict)
 print(dict["key_input"])
+
+
+
+# cols = collections.defaultdict(set)
+# rows[r].add(board[r][c])
+# https://leetcode.com/problems/valid-sudoku/

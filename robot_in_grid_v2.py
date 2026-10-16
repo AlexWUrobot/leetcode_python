@@ -38,3 +38,46 @@ case1 = [
 ]
 
 print("path:", dfs_method(case1))
+
+
+
+
+
+
+
+
+
+
+
+from collections import deque
+
+def find_path(grid):
+    m, n = len(grid), len(grid[0])
+    if grid[0][0] == 1 or grid[-1][-1] == 1:
+        return []
+
+    parent = {(0, 0): None}
+    queue = deque([(0, 0)])
+
+    while queue:
+        x, y = queue.popleft()
+        if (x, y) == (m - 1, n - 1):   # Destination 
+            path = []
+            while (x, y) != (0, 0):
+                path.append([x, y])
+                x, y = parent[(x, y)]
+            return [[0, 0]] + path[::-1]
+
+        for nx, ny in ((x + 1, y), (x, y + 1)):  # 下、右
+            if nx < m and ny < n and grid[nx][ny] == 0 and (nx, ny) not in parent:
+                parent[(nx, ny)] = (x, y)
+                queue.append((nx, ny))
+
+    return []
+
+
+grid = [[0, 0, 0],
+        [0, 1, 0],
+        [0, 0, 0]]
+print(find_path(grid))
+    
